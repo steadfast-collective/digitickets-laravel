@@ -4,6 +4,7 @@ namespace SteadfastCollective\Digitickets;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use SteadfastCollective\Digitickets\ApiRequestor;
 
 class DigiticketsServiceProvider extends ServiceProvider
 {

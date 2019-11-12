@@ -1,13 +1,13 @@
 <?php
 
-namespace SteadfastCollective\Digitickets;
+namespace SteadfastCollective\Digitickets\Repositories;
 
 use Illuminate\Support\Facades\URL;
 use SteadfastCollective\Digitickets\ApiRequestor;
 
-class ContactRepository
+class PrintMethodRepository
 {
-    private static $baseUrl = "categories/";
+    private static $baseUrl = "printmethods/";
 
     public static function index($filters)
     {
@@ -17,10 +17,5 @@ class ContactRepository
     public static function create($data)
     {
         return resolve(ApiRequestor::class)->post(self::$baseUrl, $data);
-    }
-
-    public static function update($data)
-    {
-        return resolve(ApiRequestor::class)->put(self::$baseUrl, $data);
     }
 }

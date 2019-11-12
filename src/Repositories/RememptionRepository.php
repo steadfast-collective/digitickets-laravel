@@ -1,13 +1,13 @@
 <?php
 
-namespace SteadfastCollective\Digitickets;
+namespace SteadfastCollective\Digitickets\Repositories;
 
 use Illuminate\Support\Facades\URL;
 use SteadfastCollective\Digitickets\ApiRequestor;
 
-class SavedAddressRepository
+class RedemptionRepository
 {
-    private static $baseUrl = "savedaddresses/";
+    private static $baseUrl = "redemptions/";
 
     public static function index($filters)
     {

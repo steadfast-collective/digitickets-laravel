@@ -1,13 +1,13 @@
 <?php
 
-namespace SteadfastCollective\Digitickets;
+namespace SteadfastCollective\Digitickets\Repositories;
 
 use Illuminate\Support\Facades\URL;
 use SteadfastCollective\Digitickets\ApiRequestor;
 
-class StatusRepository
+class TradingSessionSummaryRepository
 {
-    private static $baseUrl = "status/";
+    private static $baseUrl = "tradingsessionsummaries/";
 
     public static function index($filters)
     {

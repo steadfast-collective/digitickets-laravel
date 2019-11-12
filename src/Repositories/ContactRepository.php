@@ -1,16 +1,20 @@
 <?php
 
-namespace SteadfastCollective\Digitickets;
+namespace SteadfastCollective\Digitickets\Repositories;
 
 use Illuminate\Support\Facades\URL;
 use SteadfastCollective\Digitickets\ApiRequestor;
 
-class MembershipPlansRepository
+class ContactRepository
 {
-    private static $baseUrl = "membershipplans/";
+    private static $baseUrl = "contacts/";
 
     public static function index($filters)
     {
+        if (isset($filters['customerID'])) {
+            return resolve(ApiRequestor::class)->get(self::$baseUrl . $filters['customerID'], []);
+        }
+
         return resolve(ApiRequestor::class)->get(self::$baseUrl, $filters);
     }
 

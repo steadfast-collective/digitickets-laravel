@@ -4,6 +4,7 @@ namespace SteadfastCollective\Digitickets;
 
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\URL;
+use SteadfastCollective\Digitickets\Models\ApiResponse;
 
 class ApiRequestor
 {
@@ -26,7 +27,9 @@ class ApiRequestor
     {
         $data = array_merge(
             [
-    			"apiKey" => config("digitickets.key")
+    			"apiKey" => config("digitickets.key"),
+    			"limit" => 10,
+                "page" => 1,
             ],
             $data
         );
@@ -88,6 +91,8 @@ class ApiRequestor
 
     private function formatResponse($response)
     {
-        return json_decode((string) $response->getBody());
+        return (new ApiResponse)
+            ->setHeaders($response->getHeaders())
+            ->setBody(json_decode((string) $response->getBody()));
     }
 }
