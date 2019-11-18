@@ -23,8 +23,8 @@ class ContactRepository
         return resolve(ApiRequestor::class)->post(self::$baseUrl, $data);
     }
 
-    public static function update($data)
+    public static function update($contactId, $data)
     {
-        return resolve(ApiRequestor::class)->put(self::$baseUrl, $data);
+        return resolve(ApiRequestor::class)->put(self::$baseUrl . $contactId, $data);
     }
 }

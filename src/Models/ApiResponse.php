@@ -2,6 +2,8 @@
 
 namespace SteadfastCollective\Digitickets\Models;
 
+use Illuminate\Support\Str;
+
 class ApiResponse
 {
     private $headers;
@@ -42,8 +44,7 @@ class ApiResponse
             return false;
         }
 
-
-        return array_key_exists('Link', $this->headers);
+        return array_key_exists('Link', $this->headers) && Str::contains($this->headers['Link'], "rel=\"next\"");
     }
 
     // /**
