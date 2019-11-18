@@ -44,7 +44,7 @@ class ApiResponse
             return false;
         }
 
-        return array_key_exists('Link', $this->headers) && Str::contains($this->headers['Link'], "rel=\"next\"");
+        return array_key_exists('Link', $this->headers) && Str::contains($this->headers['Link'][0], "rel=\"next\"");
     }
 
     // /**
