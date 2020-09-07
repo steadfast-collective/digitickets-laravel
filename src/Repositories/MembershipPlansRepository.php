@@ -2,7 +2,6 @@
 
 namespace SteadfastCollective\Digitickets\Repositories;
 
-use Illuminate\Support\Facades\URL;
 use SteadfastCollective\Digitickets\ApiRequestor;
 
 class MembershipPlansRepository
