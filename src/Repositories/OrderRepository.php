@@ -2,7 +2,6 @@
 
 namespace SteadfastCollective\Digitickets\Repositories;
 
-use Illuminate\Support\Facades\URL;
 use SteadfastCollective\Digitickets\ApiRequestor;
 
 class OrderRepository
@@ -12,6 +11,11 @@ class OrderRepository
     public static function index($filters)
     {
         return resolve(ApiRequestor::class)->get(self::$baseUrl, $filters);
+    }
+
+    public static function show($data)
+    {
+        return resolve(ApiRequestor::class)->get(self::$baseUrl.$data['orderId'], $data);
     }
 
     public static function create($data)
