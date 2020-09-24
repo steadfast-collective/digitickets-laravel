@@ -13,6 +13,11 @@ class BranchRepository
         return resolve(ApiRequestor::class)->get(self::$baseUrl, $filters);
     }
 
+    public static function show($data)
+    {
+        return resolve(ApiRequestor::class)->get(self::$baseUrl.$data['branchId'], $data);
+    }
+
     public static function create($data)
     {
         return resolve(ApiRequestor::class)->post(self::$baseUrl, $data);
