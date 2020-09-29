@@ -13,6 +13,11 @@ class CategoryRepository
         return resolve(ApiRequestor::class)->get(self::$baseUrl, $filters);
     }
 
+    public static function show($data)
+    {
+        return resolve(ApiRequestor::class)->get(self::$baseUrl.$data['categoryId'], $data);
+    }
+
     public static function create($data)
     {
         return resolve(ApiRequestor::class)->post(self::$baseUrl, $data);
