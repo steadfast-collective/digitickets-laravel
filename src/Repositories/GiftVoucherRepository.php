@@ -2,7 +2,7 @@
 
 namespace SteadfastCollective\Digitickets\Repositories;
 
-use SteadfastCollective\Digitickets\Contract\GiftVoucherRepository as Contract;
+use SteadfastCollective\Digitickets\Contracts\GiftVoucherRepository as Contract;
 use SteadfastCollective\Digitickets\DigiticketsFacade;
 
 class GiftVoucherRepository implements Contract

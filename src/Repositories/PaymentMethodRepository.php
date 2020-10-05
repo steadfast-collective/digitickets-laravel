@@ -2,7 +2,7 @@
 
 namespace SteadfastCollective\Digitickets\Repositories;
 
-use SteadfastCollective\Digitickets\Contract\PaymentMethodRepository as Contract;
+use SteadfastCollective\Digitickets\Contracts\PaymentMethodRepository as Contract;
 use SteadfastCollective\Digitickets\DigiticketsFacade;
 
 class PaymentMethodRepository implements Contract

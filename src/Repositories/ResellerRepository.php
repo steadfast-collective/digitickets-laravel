@@ -2,7 +2,7 @@
 
 namespace SteadfastCollective\Digitickets\Repositories;
 
-use SteadfastCollective\Digitickets\Contract\ResellerRepository as Contract;
+use SteadfastCollective\Digitickets\Contracts\ResellerRepository as Contract;
 use SteadfastCollective\Digitickets\DigiticketsFacade;
 
 class ResellerRepository implements Contract

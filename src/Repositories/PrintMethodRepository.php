@@ -2,7 +2,7 @@
 
 namespace SteadfastCollective\Digitickets\Repositories;
 
-use SteadfastCollective\Digitickets\Contract\PrintMethodRepository as Contract;
+use SteadfastCollective\Digitickets\Contracts\PrintMethodRepository as Contract;
 use SteadfastCollective\Digitickets\DigiticketsFacade;
 
 class PrintMethodRepository implements Contract

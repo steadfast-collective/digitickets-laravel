@@ -1,6 +1,6 @@
 <?php
 
-namespace SteadfastCollective\Digitickets\Contract;
+namespace SteadfastCollective\Digitickets\Contracts;
 
 interface PaymentMethodRepository
 {
