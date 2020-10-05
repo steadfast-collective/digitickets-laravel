@@ -3,8 +3,9 @@
 namespace SteadfastCollective\Digitickets\Repositories;
 
 use SteadfastCollective\Digitickets\ApiRequestor;
+use SteadfastCollective\Digitickets\Contract\GiftVoucherRepository as Contract;
 
-class GiftVoucherRepository
+class GiftVoucherRepository implements Contract
 {
     private static $baseUrl = "giftvouchers/";
 

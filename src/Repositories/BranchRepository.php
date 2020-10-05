@@ -3,27 +3,28 @@
 namespace SteadfastCollective\Digitickets\Repositories;
 
 use SteadfastCollective\Digitickets\ApiRequestor;
+use SteadfastCollective\Digitickets\Contracts\BranchRepository as Contract;
 
-class BranchRepository
+class BranchRepository implements Contract
 {
     private static $baseUrl = "branches/";
 
-    public static function index($filters)
+    public static function index(array $filters = [])
     {
         return resolve(ApiRequestor::class)->get(self::$baseUrl, $filters);
     }
 
-    public static function show($data)
+    public static function show(array $data = [])
     {
         return resolve(ApiRequestor::class)->get(self::$baseUrl.$data['branchId'], $data);
     }
 
-    public static function create($data)
+    public static function create(array $data)
     {
         return resolve(ApiRequestor::class)->post(self::$baseUrl, $data);
     }
 
-    public static function update($data)
+    public static function update(array $data)
     {
         return resolve(ApiRequestor::class)->put(self::$baseUrl, $data);
     }

@@ -4,14 +4,15 @@ namespace SteadfastCollective\Digitickets\Repositories;
 
 use Illuminate\Support\Facades\URL;
 use SteadfastCollective\Digitickets\ApiRequestor;
+use SteadfastCollective\Digitickets\Contracts\WebhookRepository as Contract;
 
-class WebhookRepository
+class WebhookRepository implements Contract
 {
     private static $baseUrl = "hooks/";
 
-    public static function index()
+    public static function index(array $filters = [])
     {
-        return resolve(ApiRequestor::class)->get(self::$baseUrl, []);
+        return resolve(ApiRequestor::class)->get(self::$baseUrl, $filters);
     }
 
     public static function create($event, $targetUrl = null)
