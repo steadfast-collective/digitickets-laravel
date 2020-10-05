@@ -2,8 +2,8 @@
 
 namespace SteadfastCollective\Digitickets\Repositories;
 
-use SteadfastCollective\Digitickets\ApiRequestor;
 use SteadfastCollective\Digitickets\Contracts\CustomerAccountRepository as Contract;
+use SteadfastCollective\Digitickets\DigiticketsFacade;
 
 class CustomerAccountRepository implements Contract
 {
@@ -12,21 +12,21 @@ class CustomerAccountRepository implements Contract
     public static function index(array $filters = [])
     {
         if (isset($filters['customerAccountID'])) {
-            return resolve(ApiRequestor::class)->get(self::$baseUrl . $filters['customerAccountID'], $filters);
+            return DigiticketsFacade::get(self::$baseUrl . $filters['customerAccountID'], $filters);
         }
 
-        return resolve(ApiRequestor::class)->get(self::$baseUrl, $filters);
+        return DigiticketsFacade::get(self::$baseUrl, $filters);
     }
 
     public static function create(array $data)
     {
-        return resolve(ApiRequestor::class)->post(self::$baseUrl, $data);
+        return DigiticketsFacade::post(self::$baseUrl, $data);
     }
 
     public static function update($thirdPartyID, array $data)
     {
         $data['thirdPartyID'] = $thirdPartyID;
 
-        return resolve(ApiRequestor::class)->put(self::$baseUrl, $data);
+        return DigiticketsFacade::put(self::$baseUrl, $data);
     }
 }

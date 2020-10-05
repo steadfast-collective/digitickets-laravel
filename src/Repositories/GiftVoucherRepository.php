@@ -2,20 +2,20 @@
 
 namespace SteadfastCollective\Digitickets\Repositories;
 
-use SteadfastCollective\Digitickets\ApiRequestor;
 use SteadfastCollective\Digitickets\Contract\GiftVoucherRepository as Contract;
+use SteadfastCollective\Digitickets\DigiticketsFacade;
 
 class GiftVoucherRepository implements Contract
 {
     private static $baseUrl = "giftvouchers/";
 
-    public static function index($filters)
+    public static function index(array $filters = [])
     {
-        return resolve(ApiRequestor::class)->get(self::$baseUrl, $filters);
+        return DigiticketsFacade::get(self::$baseUrl, $filters);
     }
 
-    public static function create($data)
+    public static function create(array $data)
     {
-        return resolve(ApiRequestor::class)->post(self::$baseUrl, $data);
+        return DigiticketsFacade::post(self::$baseUrl, $data);
     }
 }
