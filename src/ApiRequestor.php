@@ -63,6 +63,10 @@ class ApiRequestor
                 $payload = [];
                 break;
         }
+        
+        if (config('digitickets.logging')) {
+            info('Digitickets API Request', ['endpoint' => $endpoint, 'method' => $method, 'data' => json_encode($data)]);
+        }
 
         $response = $this->client->request($method, $endpoint, $payload);
 
