@@ -66,7 +66,11 @@ class ApiRequestor
         }
 
         foreach (config('digitickets.logging') as $logger) {
-            (new $logger())->log('Digitickets API Request', ['endpoint' => $endpoint, 'method' => $method, 'data' => json_encode(Arr::except($data, 'apiKey'))]);
+            (new $logger())->log('Digitickets API Request', [
+                'endpoint' => $endpoint,
+                'method' => $method,
+                'data' => Arr::except($data, 'apiKey'),
+            ]);
         }
 
         $response = $this->client->request($method, $endpoint, $payload);
