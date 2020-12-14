@@ -12,6 +12,7 @@ return [
     | required to initially request the API key.
     |
     */
+
     'username' => env('DIGITICKETS_USERNAME'),
     'password' => env('DIGITICKETS_PASSWORD'),
     'key' => env('DIGITICKETS_API_KEY'),
@@ -26,6 +27,7 @@ return [
     | and your application design.
     |
     */
+
     'path' => env('DIGITICKETS_PATH', 'digitickets'),
 
     /*
@@ -36,7 +38,20 @@ return [
     | This is the api version which requests to digitickets will be made to.
     |
     */
-    'version'=> env('DIGITICKETS_API_VERSION', 'v2'),
-    
-    'logging' => true,
+
+    'version' => env('DIGITICKETS_API_VERSION', 'v2'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Logging
+    |--------------------------------------------------------------------------
+    |
+    | Configure the way you'd like the Digitickets package to log API requests.
+    |
+    */
+
+    'logging' => [
+        \SteadfastCollective\Digitickets\Logging\InfoLog::class,
+    ],
+
 ];

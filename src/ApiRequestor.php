@@ -3,6 +3,7 @@
 namespace SteadfastCollective\Digitickets;
 
 use GuzzleHttp\Client;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\URL;
 use SteadfastCollective\Digitickets\Models\ApiResponse;
 
@@ -63,9 +64,9 @@ class ApiRequestor
                 $payload = [];
                 break;
         }
-        
-        if (config('digitickets.logging')) {
-            info('Digitickets API Request', ['endpoint' => $endpoint, 'method' => $method, 'data' => json_encode(Arr::except($data, 'apiKey'))]);
+
+        foreach (config('digitickets.logging') as $logger) {
+            (new $logger())->log('Digitickets API Request', ['endpoint' => $endpoint, 'method' => $method, 'data' => json_encode(Arr::except($data, 'apiKey'))]);
         }
 
         $response = $this->client->request($method, $endpoint, $payload);
