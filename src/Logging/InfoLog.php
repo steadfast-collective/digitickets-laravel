@@ -6,6 +6,6 @@ class InfoLog implements Logger
 {
     public function log(string $message, array $data = [])
     {
-        info($message, json_encode($data));
+        info($message, $data);
     }
 }
