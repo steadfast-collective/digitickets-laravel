@@ -37,4 +37,6 @@ return [
     |
     */
     'version'=> env('DIGITICKETS_API_VERSION', 'v2'),
+    
+    'logging' => true,
 ];
