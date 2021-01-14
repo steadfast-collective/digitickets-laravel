@@ -1,5 +1,7 @@
 # Laravel Digitickets
 
+**Still in development.**
+
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/steadfastcollective/digitickets-laravel.svg?style=flat-square)](https://packagist.org/packages/steadfastcollective/digitickets-laravel)
 [![Build Status](https://img.shields.io/travis/steadfastcollective/digitickets-laravel/master.svg?style=flat-square)](https://travis-ci.org/steadfastcollective/digitickets-laravel)
 [![Quality Score](https://img.shields.io/scrutinizer/g/steadfastcollective/digitickets-laravel.svg?style=flat-square)](https://scrutinizer-ci.com/g/steadfastcollective/digitickets-laravel)
